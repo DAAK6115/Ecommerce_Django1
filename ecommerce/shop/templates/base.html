@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         <!--========== BOX ICONS ==========-->
+         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        
+
+        <!--========== CSS ==========-->
+        <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+        <title>Sneaker'Store Responsive Site</title>
+    </head>
+    <body>
+
+        <!--========== SCROLL TOP ==========-->
+        <a href="#" class="scrolltop" id="scroll-top">
+            <i class='bx bx-chevron-up scrolltop__icon'></i>
+        </a>
+
+        <!--========== HEADER ==========-->
+        <header class="l-header" id="header">
+            <nav class="nav bd-container">
+                <div class="nav__logo">
+                
+                        <a href="{% url 'index' %}" class="nav__logo">Sneaker'Store</a>
+                    
+                </div>
+        
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="{% url 'index' %}" class="nav__link">Accueil</a></li>
+                        <li class="nav__item"><a href="{% url 'menuArticle' %}" class="nav__link">Articles</a></li>
+                        <li class="nav__item"><a href="{% url 'blog' %}" class="nav__link">Blog</a></li>
+                        <li class="nav__item"><a href="{% url 'contact' %}" class="nav__link">Contactez-nous</a></li>
+                        <li class="nav__item"><a href="{% url 'about' %}" class="nav__link">A Propos</a></li>
+                    </ul>
+                </div>
+        
+                <div class="nav__user">
+                    {% if user.is_authenticated %}
+                        <div class="nav__welcome">Bienvenue, {{ user.username }}!</div>
+                        <div class="nav__logout"><a href="{% url 'logout' %}" class="nav__link">Déconnexion</a></div>
+                    {% else %}
+                        <div class="nav__login"><a href="{% url 'login' %}" class="nav__link">Connexion</a></div>
+                    {% endif %}
+                </div>
+        
+                <div class="nav__icons">
+
+                    <div class="nav__icon">
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-cart-alt'></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+        
+        
+
+
+        {% block content %}
+    
+        {% endblock content %}
+
+
+         <!--========== FOOTER ==========-->
+         <footer class="footer section bd-container">
+            <div class="footer__container bd-grid">
+                <div class="footer__content">
+                    <a href="{% url 'index' %}" class="footer__logo">Sneaker'Store</a>
+                    <span class="footer__description">Boutique de sneakers</span>
+                    <div>
+                        <a href="#" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Services</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Livraison</a></li>
+                        <li><a href="#" class="footer__link">Netoyage</a></li>
+                        <li><a href="#" class="footer__link">Analyse</a></li>
+                        <li><a href="#" class="footer__link">vente de sneaker</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Information</h3>
+                    <ul>
+                        <li><a href="#" class="footer__link">Event</a></li>
+                        <li><a href="#" class="footer__link">Contactez-nous</a></li>
+                        <li><a href="#" class="footer__link">Privacy policy</a></li>
+                        <li><a href="#" class="footer__link">Terms of services</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer__content">
+                    <h3 class="footer__title">Adress</h3>
+                    <ul>
+                        <li>Abidjan - Cote d'Ivoire</li>
+                        <li>Rue num #000</li>
+                        <li>+225  00-00-33-22-11</li>
+                        <li>lorem@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p class="footer__copy">&#169; 2024 HorizonTech. All right reserved</p>
+        </footer>
+
+        <!--========== SCROLL REVEAL ==========-->
+        <script src="static 'https://unpkg.com/scrollreveal"></script>
+
+        <!--========== MAIN JS ==========-->
+        <script src="{% static 'assets/js/main.js' %}"></script>
+
+        <script type="text/javascript" src="//cookie.eurowebpage.com/cookie.js?box_radius=10&amp;skin=cookielaw3&amp;position=bottom_right&amp;animation=shake2&amp;delay=0&amp;bg_color=ffffff&amp;msg_color=3a3939&amp;link_color=84c5a4&amp;accept_radius=15&amp;accept_background=63beaa"></script>
+    </body>
+</html>

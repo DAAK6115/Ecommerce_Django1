@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+
+    <section class="about section bd-container" id="about">
+        <div class="about__container  bd-grid">
+            <div class="about__data">
+                <span class="section-subtitle about__initial">Privacy Policy</span>
+                <h2 class="section-title about__initial">Poltique de Confidentialitée et les règles d'usages</h2>
+                <p class="about__description"> Chez <b>Sneaker'Store</b>, nous accordons une grande importance à la confidentialité et à la sécurité de vos informations personnelles. Cette politique de confidentialité décrit comment nous recueillons, utilisons et protégeons vos données lorsque vous utilisez notre site web et nos services associés.</p>
+                <a href="#" class="button">Aller en haut</a>
+            </div>
+    
+            <img src="{% static '/img/babouche yeezy.jpg' %}" alt="" class="about__img">
+        </div>
+    </section>
+
+    {% endblock content %}

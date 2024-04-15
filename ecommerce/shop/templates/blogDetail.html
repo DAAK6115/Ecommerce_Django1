@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+
+    <style>
+        /* Ajoutez vos styles personnalisés ici */
+
+        /* Style pour la section du détail de l'article */
+        .blog-detail {
+            background-color: #f9f9f9;
+            padding: 80px 0;
+        }
+
+        .blog-detail__container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .blog-detail__content {
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .blog-detail__image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .blog-detail__data {
+            padding: 20px;
+        }
+
+        .blog-detail__category {
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .blog-detail__title {
+            margin: 10px 0;
+            color: #222;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .blog-detail__date {
+            color: #777;
+            font-size: 14px;
+        }
+
+        .blog-detail__body {
+            margin-top: 20px;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+    <!--========== BLOG DETAIL ==========-->
+    <section class="blog-detail section bd-container" id="blog-detail">
+        <div class="blog-detail__container">
+            <div class="blog-detail__content">
+                <img src="{{ post.image.url }}" class="blog-detail__image" alt="{{ post.title }}">
+                <div class="blog-detail__data">
+                    <a href="#" class="blog-detail__category">{{ post.category }}</a>
+                    <h2 class="blog-detail__title">{{ post.title }}</h2>
+                    <span class="blog-detail__date">{{ post.date }}</span>
+                    <div class="blog-detail__body">
+                        {{ post.content | safe }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock content %}

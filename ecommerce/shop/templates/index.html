@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+
+        <main class="l-main">
+            <!--========== ACCEUIL ==========-->
+            <section class="home" id="home">
+                <div class="home__container bd-container bd-grid">
+                    <div class="home__data">
+                        <h1 class="home__title">Sneaker'Store</h1>
+                        <h2 class="home__subtitle">Le meillieurs paires  <br> aux meillieurs prix.</h2>
+                        <a href="#" class="button">Bienvenue</a>
+                    </div>
+    
+                    <img src="{% static '/img/Nike Dunk Low “Veneer”.png' %}" alt="" class="home__img">
+                </div>
+            </section>
+   
+          
+
+            <!--===== APP =======-->
+            <section class="app section bd-container">
+                <div class="app__container bd-grid">
+                    <div class="app__data">
+                        <span class="section-subtitle app__initial">Application</span>
+                        <h2 class="section-title app__initial">Application disponible</h2>
+                        <p class="app__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate harum ipsum, voluptas nisi in explicabo delectus vero porro animi maiores. Fugiat sunt, deserunt ad cumque.</p>
+                        <div class="app__stores">
+                            <a href="#"><img src="{% static 'assets/img/app1.png' %}" alt="" class="app__store"></a>
+                            <a href="#"><img src="{% static 'assets/img/app2.png' %}" alt="" class="app__store"></a>
+                        </div>
+                    </div>
+
+                    <img src="{% static '/img/app.png' %}" alt="" class="app__img">
+                </div>
+            </section>
+
+            
+            {% endblock content %}
+
+       

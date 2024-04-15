@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+{% endblock title %}
+
+{% block content %}
+
+    <!--========== MENU ==========-->
+    <section class="menu section bd-container" id="menu">
+
+        <span class="section-subtitle">Sneakers</span>
+        <h2 class="section-title">Articles de la semaine</h2>
+
+        <div class="menu__container bd-grid">
+            {% for product in products %}
+            <div class="menu__content">
+                <img src="{{ product.image.url }}" class="menu__img">
+                <h3 class="menu__name">{{ product.title }}</h3>
+                <span class="menu__price">{{ product.price }}$</span>
+                <a href="#" class="button menu__button addToCartButton" data-product-id="{{ product.id }}"><i class='bx bx-cart-alt'></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+        
+    {% endblock content %}
+     
